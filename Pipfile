@@ -9,6 +9,9 @@ django = "*"
 
 [dev-packages]
 splinter = {extras = ["django"], version = "*"}
+mypy = "*"
+pylint = "*"
+yapf = "*"
 
 [requires]
 python_version = "3.6"
