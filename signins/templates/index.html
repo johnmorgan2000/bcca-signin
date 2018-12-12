@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block body %}
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Sign In Sheet</h1>
+            <a href="{% url 'signin' %}"
+                ><button class="btn btn-primary">Sign In</button></a
+            >
+            <a href="{% url 'signins-since'%}"
+                ><button class="btn btn-primary">Check Signins</button></a
+            >
+            <table class="mt-2" id="signed-in-students">
+                {% for student in students %}
+                <tr>
+                    <td class="pr-4">
+                        <h4>{{ student.name }}</h4>
+                    </td>
+                    <td>
+                        <h5 class="ml-2">{{ student.date }}</h5>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock body %}

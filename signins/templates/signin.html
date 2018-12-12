@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block body %}
+
+<body>
+    <form id="sign-in-form" method="POST" action="{% url 'signin' %}">
+        {% csrf_token %}
+        <label>
+            {{ signin_form.name.label }} {{ signin_form.name }} 
+            {% if signin_form.name.errors %}
+            <div>
+                {% for error in signin_form.name.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </label>
+        <div>
+            <button id="sign-in-form" class="btn btn-info">Submit</button>
+        </div>
+    </form>
+</body>
+{% endblock body %}
